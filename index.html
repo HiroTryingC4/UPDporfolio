@@ -51,6 +51,22 @@
             <h1 class="hero-title fade-in-up">
                  <br>
                 <span class="hero-subtitle">Web Developer & Project Manager</span>
+                <div style="margin-top: 1rem;">
+                    <span style="
+                        background: linear-gradient(135deg, #10b981, #059669);
+                        color: white;
+                        padding: 0.5rem 1rem;
+                        border-radius: 25px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        animation: pulse 2s infinite;
+                    ">
+                        🟢 Available for Projects
+                    </span>
+                </div>
             </h1>
             <p class="hero-description fade-in-up delay-200">
                 A motivated IT student with hands-on experience in project management, web development, and social media marketing. Committed to delivering user-focused technical solutions while building strong brand presence online.
@@ -158,17 +174,18 @@
             <div class="work-grid">
                 <div class="work-card">
                     <div class="work-image">
-                        <img src="personalImage/Screenshot_19-8-2025_02225_127.0.0.1.jpeg?height=00&width=300" alt="AutoXplorer Cars Website" style="width:100%;height:100%;object-fit:cover;">
+                        <img src="personalImage/scr1.png
+                        " alt="Airbnb Clone Website" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="work-content">
-                        <h3 class="work-title">Lotus - Cars Website</h3>
-                        <p class="work-description">A comprehensive automotive website featuring Lotus car listings, detailed specifications, and user-friendly navigation for car enthusiasts.</p>
+                        <h3 class="work-title">Airbnb Clone</h3>
+                        <p class="work-description">A modern accommodation booking platform featuring property listings, search functionality, and user-friendly booking system inspired by Airbnb.</p>
                         <div class="work-tags">
                             <span class="tag">Web Development</span>
-                            <span class="tag">UI/UX</span>
+                            <span class="tag">Booking System</span>
                             <span class="tag">Responsive</span>
                         </div>
-                        <a href="Lotus.html" class="btn btn-outline">Read More</a>
+                        <a href="airbnb-clone.html" class="btn btn-outline">Read More</a>
                     </div>
                 </div>
                 <div class="work-card">
@@ -188,17 +205,17 @@
                 </div>
                 <div class="work-card">
                     <div class="work-image">
-                        <img src="personalImage/Screenshot_19-8-2025_24319_v0.app.jpeg" alt="Cookify Cooking Website" style="width:100%;height:100%;object-fit:cover;">
+                        <img src="personalImage/scr2.png" alt="Trinity Polytechnic College Website" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="work-content">
-                        <h3 class="work-title">DishCraft - Cooking Website</h3>
-                        <p class="work-description">Interactive cooking website featuring recipes, cooking tips, and community features for food enthusiasts.</p>
+                        <h3 class="work-title">Trinity Polytechnic College Website</h3>
+                        <p class="work-description">Official college website featuring academic programs, student services, and institutional information with modern design and functionality.</p>
                         <div class="work-tags">
-                            <span class="tag">Web App</span>
-                            <span class="tag">Community</span>
-                            <span class="tag">Interactive</span>
+                            <span class="tag">Educational Website</span>
+                            <span class="tag">Institutional</span>
+                            <span class="tag">Web Development</span>
                         </div>
-                        <a href="cooking.html" class="btn btn-outline">Read More</a>
+                        <a href="trinity-college.html" class="btn btn-outline">Read More</a>
                     </div>
                 </div>
                 <div class="work-card">
@@ -233,17 +250,17 @@
                 </div>
                 <div class="work-card">
                     <div class="work-image">
-                        <img src="personalImage/Screenshot_19-8-2025_1429_127.0.0.1.jpeg" alt="ArchiVision Portfolio" style="width:100%;height:100%;object-fit:cover;">
+                        <img src="personalImage/scr3.png" alt="Game Development Project" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="work-content">
-                        <h3 class="work-title">ArchiVision - Architecture Portfolio</h3>
-                        <p class="work-description">Professional architecture portfolio website showcasing projects with elegant design and visual presentation.</p>
+                        <h3 class="work-title">"Code Master" Interactive Game Development</h3>
+                        <p class="work-description">Currently developing an engaging interactive game featuring modern gameplay mechanics, responsive controls, and immersive user experience.</p>
                         <div class="work-tags">
-                            <span class="tag">Portfolio</span>
-                            <span class="tag">Architecture</span>
-                            <span class="tag">Visual Design</span>
+                            <span class="tag">Game Development</span>
+                            <span class="tag">Interactive</span>
+                            <span class="tag">In Progress</span>
                         </div>
-                        <a href="Archivision.html" class="btn btn-outline">Read More</a>
+                        <a href="game-development.html" class="btn btn-outline">Read More</a>
                     </div>
                 </div>
             </div>
@@ -539,21 +556,34 @@
                 
                 <button class="btn btn-light">Get In Touch</button>
                 <br><br>
-                <a href="personalImage/Black and White Simple Minimalist Office Assistant Resume.pdf" class="btn btn-primary" download target="_blank" style="margin-top:1.5rem;">
+                <a href="personalImage/Ligad, Riemar B (Resume) (1).pdf" class="btn btn-primary" download target="_blank" style="margin-top:1.5rem;">
                     Download My CV
                 </a>
             </div>
-            <!-- Legend on the left side of the map -->
-            <aside class="contact-legend" style="float:left;max-width:250px;margin-right:2rem;">
-                <h3>Legend</h3>
-                <ul style="list-style:none;padding:0;">
-                    <li><span style="font-size:1.2em;">@</span> Email</li>
-                    <li><span style="font-size:1.2em;">📱</span> Phone</li>
-                    <li><span style="font-size:1.2em;">📍</span> Location</li>
-                </ul>
-            </aside>
         </div>
     </section>
     <script src="script.js"></script>
+    
+    <!-- Floating Contact Button -->
+    <div class="floating-contact" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;">
+        <button onclick="scrollToSection('contact')" style="
+            background: linear-gradient(135deg, var(--primary-color), #667eea);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.4)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.3)'">
+            💬 Let's Talk
+        </button>
+    </div>
 </body>
 </html>

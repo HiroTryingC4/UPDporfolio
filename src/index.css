@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enable smooth scrolling for anchor links and programmatic scrolls */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply font-sans leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-bold;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .dark .gradient-bg {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #f1f3f4 100%);
+  }
+
+  .dark .hero-gradient {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Button micro-interactions */
+.btn-animated {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  will-change: transform;
+}
+.btn-animated:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(10,10,10,0.12);
+}
+.btn-animated:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 4px 12px rgba(10,10,10,0.08);
+}
+.btn-animated:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 2px;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(0.995);
+  transition: opacity 360ms ease-out, transform 360ms ease-out;
+  will-change: transform, opacity;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* small stagger helper when using inline --reveal-delay */
+[data-reveal] {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* make sure anchor smoothness is snappy on reduced-motion prefs */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal-visible, .btn-animated { transition: none !important; }
+}
+
+/* tech logo badges used in hero */
+.tech-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+  transform-origin: center;
+}
+.tech-badge.small {
+  width: 56px;
+  height: 56px;
+  font-size: 0.85rem;
+}
+.tech-badge span {
+  pointer-events: none;
+}
+
+/* slight hover scale for interactivity */
+.tech-badge:hover { transform: translateY(-6px) scale(1.03); }
+
+/* subtle rotated tech labels (faint, decorative) */
+.tech-label {
+  position: absolute;
+  color: rgba(0,0,0,0.04);
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+  pointer-events: none;
+  transform-origin: center;
+  user-select: none;
+}
+.dark .tech-label {
+  /* Slightly higher contrast in dark mode so decorative labels remain visible */
+  color: rgba(255,255,255,0.08);
+}
+.tech-label.small { font-size: 20px; }
+.tech-label.xsmall { font-size: 14px; }
+
+@media (max-width: 640px) {
+  .tech-label { display: none; }
+}

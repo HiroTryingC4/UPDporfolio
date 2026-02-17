@@ -4,27 +4,30 @@ export default function VisitorCounter({ inline = false }) {
   const [count, setCount] = useState(null)
 
   useEffect(() => {
-    const namespace = 'riemar-portfolio'
-    const key = 'visitors'
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
-    const action = (hostname === 'localhost' || hostname.startsWith('127.')) ? 'get' : 'hit'
-    const url = `https://api.countapi.xyz/${action}/${namespace}/${key}`
-    let cancelled = false
-
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) throw new Error('Count API error')
-        return res.json()
-      })
-      .then((data) => {
-        if (cancelled) return
-        setCount(typeof data === 'object' && data.value != null ? data.value : data)
-      })
-      .catch(() => {
-        if (!cancelled) setCount(null)
-      })
-
-    return () => { cancelled = true }
+    // Using GoatCounter API (free alternative to countapi.xyz)
+    // You'll need to sign up at https://www.goatcounter.com/ and replace 'YOUR_CODE' with your site code
+    
+    // For now, using a simple localStorage counter as fallback
+    try {
+      const storageKey = 'portfolio-visitor-count'
+      const hasVisited = localStorage.getItem('portfolio-visited')
+      
+      if (!hasVisited) {
+        // First time visitor
+        localStorage.setItem('portfolio-visited', 'true')
+        const currentCount = parseInt(localStorage.getItem(storageKey) || '0', 10)
+        const newCount = currentCount + 1
+        localStorage.setItem(storageKey, newCount.toString())
+        setCount(newCount)
+      } else {
+        // Returning visitor
+        const currentCount = parseInt(localStorage.getItem(storageKey) || '0', 10)
+        setCount(currentCount)
+      }
+    } catch (error) {
+      console.error('Visitor counter error:', error)
+      setCount(null)
+    }
   }, [])
 
   if (inline) {

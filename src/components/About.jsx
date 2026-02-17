@@ -18,7 +18,7 @@ export default function About() {
           
           <div className="space-y-6" data-reveal data-reveal-delay={160}>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              aaaaaaaaaaI'm a motivated and passionate Bachelor of Science in Information Technology student at Quezon City University 
+              I'm a motivated and passionate Bachelor of Science in Information Technology student at Quezon City University 
               with hands-on experience in project management, web development, and social media marketing. I'm skilled at 
               delivering user-focused technical solutions while building strong brand presence online.
             </p>
